@@ -1,0 +1,7 @@
+name: EGSEA123
+git_url: https://git.bioconductor.org/packages/EGSEA123
+component: workflows
+profile: workflows
+streams: [release, devel]
+state: active
+since: "2026-09-03"

@@ -1,0 +1,7 @@
+name: SomatiCAData
+git_url: https://git.bioconductor.org/packages/SomatiCAData
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

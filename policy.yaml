@@ -1,0 +1,9 @@
+policy_version: "2026.09.1"
+defaults: {max_wall_minutes: 340, vignettes: build}
+profiles:
+  data-experiment:
+    check_args: "--no-manual --no-build-vignettes"   # vignettes built by R CMD build already
+    bioccheck: advisory
+  workflows:
+    check_args: "--no-manual"
+    bioccheck: advisory

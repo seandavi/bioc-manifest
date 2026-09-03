@@ -1,0 +1,7 @@
+name: adductData
+git_url: https://git.bioconductor.org/packages/adductData
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

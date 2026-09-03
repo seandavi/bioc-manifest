@@ -1,0 +1,7 @@
+name: maqcExpression4plex
+git_url: https://git.bioconductor.org/packages/maqcExpression4plex
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

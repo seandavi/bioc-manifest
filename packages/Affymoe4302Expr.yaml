@@ -1,0 +1,7 @@
+name: Affymoe4302Expr
+git_url: https://git.bioconductor.org/packages/Affymoe4302Expr
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

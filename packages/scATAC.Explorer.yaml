@@ -1,0 +1,7 @@
+name: scATAC.Explorer
+git_url: https://git.bioconductor.org/packages/scATAC.Explorer
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

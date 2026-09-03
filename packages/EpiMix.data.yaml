@@ -1,0 +1,7 @@
+name: EpiMix.data
+git_url: https://git.bioconductor.org/packages/EpiMix.data
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

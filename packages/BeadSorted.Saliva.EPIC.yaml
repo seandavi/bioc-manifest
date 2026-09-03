@@ -1,0 +1,7 @@
+name: BeadSorted.Saliva.EPIC
+git_url: https://git.bioconductor.org/packages/BeadSorted.Saliva.EPIC
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

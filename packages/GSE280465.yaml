@@ -1,0 +1,7 @@
+name: GSE280465
+git_url: https://git.bioconductor.org/packages/GSE280465
+component: data-experiment
+profile: data-experiment
+streams: [devel]
+state: active
+since: "2026-09-03"

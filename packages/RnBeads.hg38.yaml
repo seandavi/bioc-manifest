@@ -1,0 +1,7 @@
+name: RnBeads.hg38
+git_url: https://git.bioconductor.org/packages/RnBeads.hg38
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

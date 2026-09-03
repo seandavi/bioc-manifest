@@ -1,0 +1,7 @@
+name: ExpressionNormalizationWorkflow
+git_url: https://git.bioconductor.org/packages/ExpressionNormalizationWorkflow
+component: workflows
+profile: workflows
+streams: [release, devel]
+state: active
+since: "2026-09-03"

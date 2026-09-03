@@ -1,0 +1,7 @@
+name: GSE159526
+git_url: https://git.bioconductor.org/packages/GSE159526
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

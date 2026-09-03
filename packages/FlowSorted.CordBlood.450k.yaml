@@ -1,0 +1,7 @@
+name: FlowSorted.CordBlood.450k
+git_url: https://git.bioconductor.org/packages/FlowSorted.CordBlood.450k
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

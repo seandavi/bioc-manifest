@@ -1,0 +1,7 @@
+name: TENET.ExperimentHub
+git_url: https://git.bioconductor.org/packages/TENET.ExperimentHub
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

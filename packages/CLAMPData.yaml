@@ -1,0 +1,7 @@
+name: CLAMPData
+git_url: https://git.bioconductor.org/packages/CLAMPData
+component: data-experiment
+profile: data-experiment
+streams: [devel]
+state: active
+since: "2026-09-03"

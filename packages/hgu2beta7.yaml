@@ -1,0 +1,7 @@
+name: hgu2beta7
+git_url: https://git.bioconductor.org/packages/hgu2beta7
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

@@ -1,0 +1,7 @@
+name: SomaticCancerAlterations
+git_url: https://git.bioconductor.org/packages/SomaticCancerAlterations
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

@@ -1,0 +1,7 @@
+name: ITALICSData
+git_url: https://git.bioconductor.org/packages/ITALICSData
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

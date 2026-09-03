@@ -1,0 +1,7 @@
+name: annotation
+git_url: https://git.bioconductor.org/packages/annotation
+component: workflows
+profile: workflows
+streams: [release, devel]
+state: active
+since: "2026-09-03"

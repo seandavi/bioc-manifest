@@ -1,0 +1,7 @@
+name: mouse4302barcodevecs
+git_url: https://git.bioconductor.org/packages/mouse4302barcodevecs
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

@@ -1,0 +1,7 @@
+name: hgu133plus2CellScore
+git_url: https://git.bioconductor.org/packages/hgu133plus2CellScore
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

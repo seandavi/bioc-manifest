@@ -1,0 +1,7 @@
+name: MEDIPSData
+git_url: https://git.bioconductor.org/packages/MEDIPSData
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

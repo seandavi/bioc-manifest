@@ -1,0 +1,7 @@
+name: SVM2CRMdata
+git_url: https://git.bioconductor.org/packages/SVM2CRMdata
+component: data-experiment
+profile: data-experiment
+streams: [release, devel]
+state: active
+since: "2026-09-03"

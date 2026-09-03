@@ -1,0 +1,7 @@
+name: Fletcher2013b
+git_url: https://git.bioconductor.org/packages/Fletcher2013b
+component: data-experiment
+profile: data-experiment
+streams: [release]
+state: active
+since: "2026-09-03"
