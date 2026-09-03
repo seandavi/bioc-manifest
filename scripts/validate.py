@@ -71,17 +71,43 @@ def validate_policy(path):
     return profiles
 
 
+def validate_versions(path):
+    if not path.exists():
+        raise ValueError(f"{path}: missing")
+    data = parse_flat_yaml(path.read_text())
+    for field in ("release_version", "devel_version"):
+        if field not in data:
+            raise ValueError(f"{path}: missing '{field}'")
+    version_re = re.compile(r"^\d+\.\d+$")
+    for field in ("release_version", "devel_version"):
+        if not version_re.match(data[field]):
+            raise ValueError(f"{path}: {field} '{data[field]}' doesn't match ^\\d+.\\d+$")
+    release_major, release_minor = (int(p) for p in data["release_version"].split("."))
+    devel_major, devel_minor = (int(p) for p in data["devel_version"].split("."))
+    if (devel_major, devel_minor) != (release_major, release_minor + 1):
+        raise ValueError(
+            f"{path}: devel_version '{data['devel_version']}' is not a one-minor-version "
+            f"bump over release_version '{data['release_version']}'"
+        )
+
+
 def run(root):
+    validate_versions(root / "versions.yaml")
     policy_profiles = validate_policy(root / "policy.yaml")
     for path in sorted((root / "packages").glob("*.yaml")):
         validate_package(path, policy_profiles)
 
 
+def make_good_fixture(root):
+    (root / "packages").mkdir()
+    (root / "policy.yaml").write_text(Path(REPO_ROOT / "policy.yaml").read_text())
+    (root / "versions.yaml").write_text('release_version: "3.23"\ndevel_version: "3.24"\n')
+
+
 def selftest():
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
-        (root / "packages").mkdir()
-        (root / "policy.yaml").write_text(Path(REPO_ROOT / "policy.yaml").read_text())
+        make_good_fixture(root)
         (root / "packages" / "bad.yaml").write_text(
             "name: bad\ngit_url: https://git.bioconductor.org/packages/bad\n"
             "component: not-a-real-component\nprofile: workflows\n"
@@ -90,10 +116,25 @@ def selftest():
         try:
             run(root)
         except ValueError:
-            print("selftest: OK (broken fixture correctly rejected)")
-            return 0
-        print("selftest: FAILED (broken fixture was not rejected)")
-        return 1
+            pass
+        else:
+            print("selftest: FAILED (broken package fixture was not rejected)")
+            return 1
+
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        make_good_fixture(root)
+        (root / "versions.yaml").write_text('release_version: "3.23"\ndevel_version: "3.23"\n')
+        try:
+            run(root)
+        except ValueError:
+            pass
+        else:
+            print("selftest: FAILED (broken versions.yaml fixture was not rejected)")
+            return 1
+
+    print("selftest: OK (broken fixtures correctly rejected)")
+    return 0
 
 
 def main():

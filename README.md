@@ -31,6 +31,13 @@ since: "2026-09-03"
 `policy.yaml` holds the build settings per `profile` (check args, BioCheck
 strictness) and a `policy_version` the build records against every attempt.
 
+`versions.yaml` is the single source for the current Bioconductor release and
+devel version pair; it drives which `RELEASE_<X_Y>` branch `scripts/import.py`
+reads and which git branch and container tag (`bioconductor/bioconductor_docker:RELEASE_<X_Y>`
+/ `:devel`) consumers of this repo build against. Nothing here or in
+consuming repos fetches bioconductor.org for this — a release roll is a PR
+bumping `versions.yaml`.
+
 ## Adding a package
 
 Open a PR adding `packages/<name>.yaml` in the format above. It must pass

@@ -7,13 +7,14 @@ and writes one flat YAML file per package under packages/. Idempotent:
 rerunning with no upstream change writes nothing; `state` and `since` on
 an existing file are never touched, only `streams` is refreshed.
 
+Never talks to bioconductor.org: the release/devel version pair comes from
+versions.yaml in this repo (human-PRed at each release roll).
+
 stdlib only.
 """
 import re
 import subprocess
-import sys
 import tempfile
-import urllib.request
 from datetime import date
 from pathlib import Path
 
@@ -24,10 +25,8 @@ COMPONENTS = ("data-experiment", "workflows")  # filename stem == component == p
 
 
 def get_versions():
-    text = urllib.request.urlopen("https://bioconductor.org/config.yaml", timeout=30).read().decode()
-    release = re.search(r'^release_version:\s*"?([\d.]+)"?', text, re.M).group(1)
-    devel = re.search(r'^devel_version:\s*"?([\d.]+)"?', text, re.M).group(1)
-    return release, devel
+    versions_file = REPO_ROOT / "versions.yaml"
+    return existing_field(versions_file, "release_version"), existing_field(versions_file, "devel_version")
 
 
 def clone_branch(branch, dest):
