@@ -1,5 +1,5 @@
-policy_version: "2026.09.1"
-defaults: {max_wall_minutes: 340, vignettes: build}
+policy_version: "2026.09.2"
+defaults: {max_wall_minutes: 340, vignettes: build, source_size_limit_mb: 4096}
 profiles:
   data-experiment:
     check_args: "--no-manual --no-build-vignettes"   # vignettes built by R CMD build already
